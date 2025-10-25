@@ -31,10 +31,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Azure OpenAI API configuration
-AZURE_OPENAI_ENDPOINT = "https://iai-azoai-interview.openai.azure.com/"
-AZURE_OPENAI_API_KEY = "6FrJnxZWsBwkXOpFtb16DmpS5ULgoodO1m3A0DpDIj6Q9PmhnwKCJQQJ99BCACi0881XJ3w3AAABACOGqhml"
-OPENAI_API_VERSION = "2024-08-01-preview"
-DEPLOYMENT_NAME = "gpt-4o"
+AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT", "https://iai-azoai-interview.openai.azure.com/")
+AZURE_OPENAI_API_KEY = os.environ.get("AZURE_OPENAI_API_KEY", "")
+OPENAI_API_VERSION = os.environ.get("OPENAI_API_VERSION", "2024-08-01-preview")
+DEPLOYMENT_NAME = os.environ.get("DEPLOYMENT_NAME", "gpt-4o")
 
 # Constants
 CONSULTATION_QUESTION = "What changes would you like to see in the education system in your area over the next five years?"
